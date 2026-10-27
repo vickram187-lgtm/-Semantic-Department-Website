@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Computer Science & Engineering</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .page-tab { display: none; }
+        .page-tab.active { display: block; }
+        .nav-link.active {
+            border-bottom: 3px solid #60a5fa;
+            color: #ffffff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- SEMANTIC HEADER -->
+    <header class="bg-brand-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center py-4 border-b border-slate-700/50">
+                <div class="flex items-center space-x-3 mb-3 md:mb-0">
+                    <div class="bg-blue-600 text-white p-2.5 rounded-xl shadow-md">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.605 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white">Department of Computer Science & Engineering</h1>
+                        <p class="text-xs text-blue-300 font-medium">School of Engineering & Applied Sciences</p>
+                    </div>
+                </div>
+
+                <!-- Quick Action Button -->
+                <div class="hidden lg:flex items-center space-x-2 text-xs bg-slate-800/80 px-3 py-1.5 rounded-full border border-slate-700">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-slate-300">Admissions Open 2026-27</span>
+                </div>
+            </div>
+
+            <!-- SEMANTIC NAV -->
+            <nav class="flex justify-center md:justify-start space-x-1 sm:space-x-8 overflow-x-auto py-2 text-slate-300 text-sm">
+                <button onclick="switchTab('home')" id="nav-home" class="nav-link py-2 px-3 hover:text-white transition-colors border-b-2 border-transparent active">
+                    Home
+                </button>
+                <button onclick="switchTab('about')" id="nav-about" class="nav-link py-2 px-3 hover:text-white transition-colors border-b-2 border-transparent">
+                    About Us
+                </button>
+                <button onclick="switchTab('faculty')" id="nav-faculty" class="nav-link py-2 px-3 hover:text-white transition-colors border-b-2 border-transparent">
+                    Faculty
+                </button>
+                <button onclick="switchTab('contact')" id="nav-contact" class="nav-link py-2 px-3 hover:text-white transition-colors border-b-2 border-transparent">
+                    Contact Us
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- PAGE 1: HOME -->
+        <div id="page-home" class="page-tab active space-y-10">
+            <!-- Hero Section -->
+            <section class="relative bg-gradient-to-r from-brand-800 to-brand-600 rounded-2xl overflow-hidden shadow-xl text-white p-8 sm:p-12">
+                <div class="max-w-3xl space-y-4">
+                    <span class="inline-block bg-blue-500/30 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full border border-blue-400/30">
+                        Innovate • Create • Lead
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Pioneering the Future of Computing</h2>
+                    <p class="text-blue-100 text-base sm:text-lg leading-relaxed">
+                        Welcome to the Department of CSE. We empower students with fundamental knowledge, cutting-edge research opportunities, and practical innovation in Artificial Intelligence, Software Engineering, and Cyber Security.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <button onclick="switchTab('about')" class="bg-white text-brand-800 font-semibold px-6 py-2.5 rounded-lg hover:bg-blue-50 transition-colors shadow-md">
+                            Explore Department
+                        </button>
+                        <button onclick="switchTab('contact')" class="bg-brand-700/60 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg border border-blue-400/40 transition-colors">
+                            Get in Touch
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Multimedia Integration Section -->
+            <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80">
+                <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    <span>Department Showcase & Audio Briefing</span>
+                </h3>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <!-- Video Embed with Figure -->
+                    <figure class="space-y-3">
+                        <div class="relative bg-slate-900 rounded-xl overflow-hidden aspect-video shadow-md flex items-center justify-center">
+                            <video controls class="w-full h-full object-cover">
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video tags.
+                            </video>
+                        </div>
+                        <figcaption class="text-xs text-slate-500 italic text-center">
+                            Figure 1.1: Virtual Campus & CSE Research Lab Walkthrough Video.
+                        </figcaption>
+                    </figure>
+
+                    <!-- Audio Embed & Welcome Briefing -->
+                    <div class="space-y-6 flex flex-col justify-between h-full">
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="p-2 bg-blue-100 text-brand-600 rounded-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900">HOD Address & Podcast Clip</h4>
+                                    <p class="text-xs text-slate-500">Listen to Prof. Dr. E. Sharma welcome the batch of 2026.</p>
+                                </div>
+                            </div>
+                            <!-- Audio Player -->
+                            <audio controls class="w-full mt-2">
+                                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+
+                        <!-- Highlights Box -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-blue-50 rounded-xl border border-blue-100 text-center">
+                                <span class="block text-3xl font-bold text-brand-600">100%</span>
+                                <span class="text-xs font-medium text-slate-600">Placement Record</span>
+                            </div>
+                            <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100 text-center">
+                                <span class="block text-3xl font-bold text-emerald-600">₹45 LPA</span>
+                                <span class="text-xs font-medium text-slate-600">Highest Package</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest News / Announcements (Semantic Articles + Aside Layout) -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <section class="lg:col-span-2 space-y-6">
+                    <h3 class="text-xl font-bold text-slate-900 border-l-4 border-brand-600 pl-3">
+                        Latest Departmental News
+                    </h3>
+
+                    <!-- Article 1 -->
+                    <article class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-2 text-xs text-slate-400 mb-2">
+                            <span class="bg-blue-100 text-brand-700 font-semibold px-2 py-0.5 rounded">Research</span>
+                            <span>•</span>
+                            <time datetime="2026-10-24">October 24, 2026</time>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 hover:text-brand-600 transition-colors cursor-pointer">
+                            CSE Faculty Secures $250k International AI Grant
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Dr. Rajesh Kumar and the AI Research Group have been awarded a prestigious grant to advance medical diagnostics using deep learning and edge computing models.
+                        </p>
+                        <a href="#" class="text-brand-600 text-xs font-semibold hover:underline inline-flex items-center">Read full article →</a>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-2 text-xs text-slate-400 mb-2">
+                            <span class="bg-emerald-100 text-emerald-700 font-semibold px-2 py-0.5 rounded">Event</span>
+                            <span>•</span>
+                            <time datetime="2026-10-18">October 18, 2026</time>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 hover:text-brand-600 transition-colors cursor-pointer">
+                            Annual National Hackathon "HackCSE 2026" Announced
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Registrations are now open for the 48-hour national coding sprint. Over 50 teams across 30 universities will compete for prizes worth $10,000.
+                        </p>
+                        <a href="#" class="text-brand-600 text-xs font-semibold hover:underline inline-flex items-center">Read full article →</a>
+                    </article>
+                </section>
+
+                <!-- Semantic ASIDE Sidebar -->
+                <aside class="space-y-6">
+                    <div class="bg-slate-900 text-white p-6 rounded-xl shadow-md">
+                        <h4 class="font-bold text-lg mb-4 text-blue-300">Important Notices</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="pb-2 border-b border-slate-800">
+                                <a href="#" class="hover:text-blue-300 transition-colors">📌 Mid-Semester Examination Schedule for Fall 2026</a>
+                            </li>
+                            <li class="pb-2 border-b border-slate-800">
+                                <a href="#" class="hover:text-blue-300 transition-colors">📌 B.Tech Final Year Project Submission Guidelines</a>
+                            </li>
+                            <li class="pb-2 border-b border-slate-800">
+                                <a href="#" class="hover:text-blue-300 transition-colors">📌 Guest Lecture on Quantum Computing by Dr. S. Rao</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- PAGE 2: ABOUT -->
+        <div id="page-about" class="page-tab space-y-10">
+            <!-- Header section -->
+            <section class="text-center max-w-3xl mx-auto space-y-3">
+                <h2 class="text-3xl font-extrabold text-slate-900">About the Department</h2>
+                <p class="text-slate-600">Empowering future software architects, computational scientists, and technology innovators since 1998.</p>
+            </section>
+
+            <!-- Vision & Mission Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="w-2 h-full bg-brand-600 absolute left-0 top-0"></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                        <span>🎯 Our Vision</span>
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        To evolve into a globally recognized center of excellence in Computer Science education and cutting-edge research, producing ethical engineers capable of solving complex societal problems.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="w-2 h-full bg-emerald-600 absolute left-0 top-0"></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                        <span>🚀 Our Mission</span>
+                    </h3>
+                    <ul class="text-slate-600 text-sm space-y-2 list-disc pl-5">
+                        <li>Deliver robust foundational and modern technical curriculum.</li>
+                        <li>Foster industry collaboration and interdisciplinary research culture.</li>
+                        <li>Cultivate leadership qualities, entrepreneurship, and societal responsibility.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Department History (Section & Article) -->
+            <section class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <h3 class="text-2xl font-bold text-slate-900">Department History</h3>
+                <article class="prose max-w-none text-slate-600 text-sm leading-relaxed space-y-3">
+                    <p>
+                        Established in 1998 with an initial intake of 60 undergraduate students, the Department of Computer Science & Engineering has grown exponentially over the last two decades. Today, it hosts over 800 students across undergraduate (B.Tech), postgraduate (M.Tech), and doctoral (Ph.D.) programs.
+                    </p>
+                    <p>
+                        Our alumni work in leadership roles across top multinational tech giants, research labs, and pioneering tech startups globally.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Facilities List -->
+            <section class="space-y-6">
+                <h3 class="text-2xl font-bold text-slate-900 border-l-4 border-brand-600 pl-3">State-of-the-Art Facilities</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="text-brand-600 font-bold text-lg">💻 High-Performance Computing Lab</div>
+                        <p class="text-xs text-slate-500">Equipped with 60 NVIDIA GPU workstations for deep learning and heavy data processing.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="text-brand-600 font-bold text-lg">🛡️ Cyber Security & IoT Center</div>
+                        <p class="text-xs text-slate-500">Dedicated network sandboxes and IoT hardware kits for real-time security research.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="text-brand-600 font-bold text-lg">📚 Department Digital Library</div>
+                        <p class="text-xs text-slate-500">24/7 access to IEEE Xplore, ACM Digital Library, and over 5,000 reference textbooks.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 3: FACULTY -->
+        <div id="page-faculty" class="page-tab space-y-8">
+            <section class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-3xl font-extrabold text-slate-900">Faculty Profiles</h2>
+                <p class="text-slate-600 text-sm">Meet our team of distinguished educators, researchers, and mentors.</p>
+            </section>
+
+            <!-- Faculty Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Faculty Card 1 -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="h-48 bg-slate-200 relative flex items-center justify-center">
+                        <svg class="w-24 h-24 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <span class="absolute top-3 right-3 bg-brand-600 text-white text-xs px-2 py-1 rounded-md font-semibold">Head of Department</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-slate-900">Dr. E. Sharma</h3>
+                        <p class="text-xs text-brand-600 font-semibold">Professor & HOD</p>
+                        <div class="text-xs text-slate-600 space-y-1 pt-2 border-t border-slate-100">
+                            <p><strong>Qualification:</strong> Ph.D. (IIT Delhi)</p>
+                            <p><strong>Research:</strong> Artificial Intelligence, Computer Vision</p>
+                            <p><strong>Email:</strong> hod.cse@university.edu</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Faculty Card 2 -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="h-48 bg-slate-200 relative flex items-center justify-center">
+                        <svg class="w-24 h-24 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <span class="absolute top-3 right-3 bg-slate-700 text-white text-xs px-2 py-1 rounded-md font-semibold">Professor</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-slate-900">Dr. Rajesh Kumar</h3>
+                        <p class="text-xs text-brand-600 font-semibold">Senior Professor</p>
+                        <div class="text-xs text-slate-600 space-y-1 pt-2 border-t border-slate-100">
+                            <p><strong>Qualification:</strong> Ph.D. (IISc Bangalore)</p>
+                            <p><strong>Research:</strong> Distributed Systems, Cloud Security</p>
+                            <p><strong>Email:</strong> rkumar@university.edu</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Faculty Card 3 -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="h-48 bg-slate-200 relative flex items-center justify-center">
+                        <svg class="w-24 h-24 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <span class="absolute top-3 right-3 bg-slate-700 text-white text-xs px-2 py-1 rounded-md font-semibold">Associate Professor</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-slate-900">Dr. Ananya Roy</h3>
+                        <p class="text-xs text-brand-600 font-semibold">Associate Professor</p>
+                        <div class="text-xs text-slate-600 space-y-1 pt-2 border-t border-slate-100">
+                            <p><strong>Qualification:</strong> Ph.D. (NTU Singapore)</p>
+                            <p><strong>Research:</strong> Natural Language Processing</p>
+                            <p><strong>Email:</strong> aroy@university.edu</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- PAGE 4: CONTACT -->
+        <div id="page-contact" class="page-tab space-y-10">
+            <section class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-3xl font-extrabold text-slate-900">Contact the Department</h2>
+                <p class="text-slate-600 text-sm">Have queries regarding admissions, research, or academic programs? Reach out to us.</p>
+            </section>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Contact Info & Form -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                    <h3 class="text-xl font-bold text-slate-900">Send an Inquiry</h3>
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div>
+                            <label for="contact-name" class="block text-xs font-semibold text-slate-700 mb-1">Your Name</label>
+                            <input type="text" id="contact-name" required placeholder="John Doe" class="w-full px-4 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="contact-email" class="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
+                            <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-4 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="contact-msg" class="block text-xs font-semibold text-slate-700 mb-1">Message</label>
+                            <textarea id="contact-msg" rows="4" required placeholder="Write your query here..." class="w-full px-4 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-600 focus:outline-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors shadow">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                    <div id="contact-alert" class="hidden p-3 bg-emerald-100 text-emerald-800 text-xs rounded-lg">
+                        Thank you! Your message has been sent successfully.
+                    </div>
+                </div>
+
+                <!-- Contact Details & Map Mock -->
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-sm text-slate-600">
+                        <h3 class="text-xl font-bold text-slate-900">Office Details</h3>
+                        <p>📍 <strong>Address:</strong> Block C, Tech Campus, University Road, Chennai, Tamil Nadu - 600028</p>
+                        <p>📞 <strong>Phone:</strong> +91 44 2257 8000</p>
+                        <p>✉️ <strong>Email:</strong> cse.office@university.edu</p>
+                        <p>⏰ <strong>Office Hours:</strong> Monday – Friday: 9:00 AM – 5:00 PM</p>
+                    </div>
+
+                    <!-- Map Container Mock -->
+                    <div class="bg-slate-200 rounded-2xl overflow-hidden h-64 shadow-inner relative flex items-center justify-center text-slate-500 text-center p-4">
+                        <div class="space-y-2">
+                            <svg class="w-10 h-10 text-brand-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <p class="font-semibold text-slate-700 text-sm">Interactive Campus Map Container</p>
+                            <p class="text-xs text-slate-500">Department of Computer Science & Engineering, Main Campus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- SEMANTIC FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <h5 class="text-white font-bold text-sm mb-2">Department of CSE</h5>
+                    <p class="text-slate-400 leading-relaxed">Dedicated to excellence in education, groundbreaking research, and community engagement.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold text-sm mb-2">Quick Links</h5>
+                    <ul class="space-y-1">
+                        <li><a href="#" onclick="switchTab('home')" class="hover:underline">Home</a></li>
+                        <li><a href="#" onclick="switchTab('about')" class="hover:underline">About Us</a></li>
+                        <li><a href="#" onclick="switchTab('faculty')" class="hover:underline">Faculty Directory</a></li>
+                        <li><a href="#" onclick="switchTab('contact')" class="hover:underline">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold text-sm mb-2">Connect With Us</h5>
+                    <p class="mb-2">Follow our social channels for live updates on events and research.</p>
+                    <div class="flex space-x-3 text-white">
+                        <span>🌐 Twitter</span>
+                        <span>💼 LinkedIn</span>
+                        <span>📺 YouTube</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-4 text-center">
+                <p>&copy; 2026 Department of Computer Science & Engineering. All Rights Reserved. Experiment 3 Semantic Web Application.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR TAB SWITCHING AND FORM HANDLING -->
+    <script>
+        function switchTab(tabId) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.page-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Deactivate all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Show current tab
+            const targetTab = document.getElementById('page-' + tabId);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+
+            // Activate current nav link
+            const targetNav = document.getElementById('nav-' + tabId);
+            if (targetNav) {
+                targetNav.classList.add('active');
+            }
+
+            // Scroll smoothly to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('contact-alert');
+            alertBox.classList.remove('hidden');
+            event.target.reset();
+
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
